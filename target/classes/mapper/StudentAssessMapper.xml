@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nfplus.mapper.StudentAssessMapper">
+  <resultMap id="BaseResultMap" type="com.nfplus.bean.StudentAssess">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="school_name" jdbcType="VARCHAR" property="schoolName" />
+    <result column="student_name" jdbcType="VARCHAR" property="studentName" />
+    <result column="course_name" jdbcType="VARCHAR" property="courseName" />
+    <result column="score" jdbcType="INTEGER" property="score" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+  </resultMap>
+
+  <select id="queryById" resultType="com.nfplus.bean.StudentAssess">
+    select id, school_name, student_name, course_name, score from student_assess where id = ${id}
+  </select>
+</mapper>
